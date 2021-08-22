@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+* {padding: 0; margin: 0;}
+body{
+  background-color: rgb(33, 20, 84);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #691818;
+  background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+  position:fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.logo {
+  margin: 0 0 0 .45em;
+  font-family: 'Rampart One', cursive;
+  
+}
+    .logo a {
+      color: rgb(28, 24, 22);
+    }
+
+    .logo, .menubar {
+        list-style: none;
+        text-transform: uppercase;
+    }
+
+    .logo a, .menubar a {
+        text-decoration: none;
+        letter-spacing: .45rem;
+    }
+
+.menubar  {
+  display: flex;
+}
+
+.menubar a {
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.menubar a:hover {
+    background: #00ace6;
+}
+.gallery{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+  margin-top: 60px;
+}
+.gallery img {
+    float: left;
+    height: 100%;
+    object-fit: cover;
+  width: 100%;
+  display: block;
+  transition: all 100ms ease-out;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+@media all and (max-width: 990px) {
+  .navbar {
+    flex-direction: column;
+    position:fixed;
+    top: 0px;
+    width: 100%;
+    margin-top: 0%;
+    z-index: 1;
+  }
+  .gallery{margin-top: 0px;}
+  .logo {
+  margin: 0;
+}
+  
+  .menubar  {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+@media all and (max-width: 600px) {
+  .gallery{margin-top: 190px;}
+  .logo {
+    margin: .25em 0;
+    align-self: left; /* align the logo to the left side of 'flex-container' */
+}
+  
+  .menubar {
+    flex-direction: column;
+  }
+  
+  .menubar a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+  
+  .menubar li:last-of-type a {
+    border-bottom: none;
+  }
+}
